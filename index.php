@@ -1,21 +1,25 @@
 <?php
 session_start() ;
-$msg ="" ;
+$show_modal = false;
+//$msg ="" ;
 if(isset($_SESSION['modal']))
 {
   if ($_SESSION['modal'] == 1)
   {
-    $msg = "Thank You! We will get back to you in 24 hours" ;
+    $show_modal = 1;
+    //$msg = "Thank You! We will get back to you in 24 hours" ;
     //echo "<script>$('#myModal1').modal('show')</script>";
   }
 
   if ($_SESSION['modal'] == 0)
   {
-    $msg = "Request Not Sent! Try Again." ;
+    $show_modal = -1;
+    //$msg = "Request Not Sent! Try Again." ;
     //echo "<script>$('#myModal2').modal('show')</script>";
   }
 }
 unset($_SESSION['modal']) ;
+
 ?>
 <!DOCTYPE html>
 <html lang="en-US">
@@ -47,8 +51,7 @@ unset($_SESSION['modal']) ;
 
   </head>
 
-  <body id="page-top" onload="load()">
-
+  <body id="page-top">
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
@@ -77,14 +80,14 @@ unset($_SESSION['modal']) ;
           </ul>
         </div>
       </div>
-      <div style="color:rgb(255, 255, 0); text-align:center; width:100%;">
+      <!-- <div id="msgdiv">
         <?php echo '<h2 id="msg">'.$msg.'</h2>' ;?>
-      </div>
+      </div> -->
     </nav>
-  <div id="loader">
+  <!-- <div id="loader">
     <img src="./img/qanopy.jpg" alt="loading">
-  </div>
-  <div id="content" class="animate-bottom">
+  </div> -->
+  <!-- <div id="content" class="animate-bottom"> -->
   <header class="masthead text-center text-white d-flex" id="mastt">
     <div id="over">
     <div class="container my-auto">
@@ -95,82 +98,82 @@ unset($_SESSION['modal']) ;
 
              <div class="selected" id="first">
               <img src="img/display/cutout/DS101.jpg">
-              <div style="color:rgb(255, 255, 0); text-align:center; margin-top:-40px; padding:10px; width:100%; background:rgb(255, 102, 0); font-weight:bold ;">CUTOUTS</div>
+              <div class="car-title" style="color:rgb(255, 255, 0); text-align:center; margin-top:-40px; padding:10px; width:100%; background:rgb(255, 102, 0); font-weight:bold ;">CUTOUTS</div>
             </div>
 
             <div class="next" id="second">
               <img src="img/display/display-board/DS119.jpg">
-              <div style="color:rgb(255, 255, 0); text-align:center; margin-top:-40px; padding:10px; width:100%; background:rgb(255, 102, 0); font-weight:bold ;">DISPLAY BOARDS</div>
+              <div class="car-title" style="color:rgb(255, 255, 0); text-align:center; margin-top:-40px; padding:10px; width:100%; background:rgb(255, 102, 0); font-weight:bold ;">DISPLAY BOARDS</div>
             </div>
 
             <div class="nextRightSecond">
               <img src="img/gift/banner-pens/PN601.jpg">
-              <div style="color:rgb(255, 255, 0); text-align:center; margin-top:-40px; padding:10px; width:100%; background:rgb(255, 102, 0); font-weight:bold ;">BANNER PENS</div>
+              <div class="car-title" style="color:rgb(255, 255, 0); text-align:center; margin-top:-40px; padding:10px; width:100%; background:rgb(255, 102, 0); font-weight:bold ;">BANNER PENS</div>
             </div>
 
             <div class="hideRight">
               <img src="img/gift/coffee-mug/CM202.jpg">
-              <div style="color:rgb(255, 255, 0); text-align:center; margin-top:-40px; padding:10px; width:100%; background:rgb(255, 102, 0); font-weight:bold ;">COFFEE MUGS</div>
+              <div class="car-title" style="color:rgb(255, 255, 0); text-align:center; margin-top:-40px; padding:10px; width:100%; background:rgb(255, 102, 0); font-weight:bold ;">COFFEE MUGS</div>
             </div>
 
             <div class="hideRight">
               <img src="img/gift/diaries/DR101.jpg">
-              <div style="color:rgb(255, 255, 0); text-align:center; margin-top:-40px; padding:10px; width:100%; background:rgb(255, 102, 0); font-weight:bold ;">DIARIES</div>
+              <div class="car-title" style="color:rgb(255, 255, 0); text-align:center; margin-top:-40px; padding:10px; width:100%; background:rgb(255, 102, 0); font-weight:bold ;">DIARIES</div>
             </div>
 
             <div class="hideRight">
               <img src="img/gift/key-rings/KR407.jpg">
-              <div style="color:rgb(255, 255, 0); text-align:center; margin-top:-40px; padding:10px; width:100%; background:rgb(255, 102, 0); font-weight:bold ;">KEY RINGS</div>
+              <div class="car-title" style="color:rgb(255, 255, 0); text-align:center; margin-top:-40px; padding:10px; width:100%; background:rgb(255, 102, 0); font-weight:bold ;">KEY RINGS</div>
             </div>
 
             <div class="hideRight">
               <img src="img/gift/lanyard/LY505.jpg">
-              <div style="color:rgb(255, 255, 0); text-align:center; margin-top:-40px; padding:10px; width:100%; background:rgb(255, 102, 0); font-weight:bold ;">LANYARDS</div>
+              <div class="car-title" style="color:rgb(255, 255, 0); text-align:center; margin-top:-40px; padding:10px; width:100%; background:rgb(255, 102, 0); font-weight:bold ;">LANYARDS</div>
             </div>
 
             <div class="hideRight">
               <img src="img/gift/metal-pens/PN609.jpg">
-              <div style="color:rgb(255, 255, 0); text-align:center; margin-top:-40px; padding:10px; width:100%; background:rgb(255, 102, 0);  font-weight:bold ;">METAL PENS</div>
+              <div class="car-title" style="color:rgb(255, 255, 0); text-align:center; margin-top:-40px; padding:10px; width:100%; background:rgb(255, 102, 0);  font-weight:bold ;">METAL PENS</div>
             </div>
 
             <div class="hideRight">
               <img src="img/gift/stylus-pens/PN640.jpg">
-              <div style="color:rgb(255, 255, 0); text-align:center; margin-top:-40px; padding:10px; width:100%; background:rgb(255, 102, 0); font-weight:bold ;">STYLUS PENS</div>
+              <div class="car-title" style="color:rgb(255, 255, 0); text-align:center; margin-top:-40px; padding:10px; width:100%; background:rgb(255, 102, 0); font-weight:bold ;">STYLUS PENS</div>
             </div>
 
             <div class="hideRight">
               <img src="img/gift/tote-bags/TB653.jpg">
-              <div style="color:rgb(255, 255, 0); text-align:center; margin-top:-40px; padding:10px; width:100%; background:rgb(255, 102, 0); font-weight:bold ;">TOTE BAGS</div>
+              <div class="car-title" style="color:rgb(255, 255, 0); text-align:center; margin-top:-40px; padding:10px; width:100%; background:rgb(255, 102, 0); font-weight:bold ;">TOTE BAGS</div>
             </div>
 
             <div class="hideRight">
               <img src="img/gift/towels/TL701.jpg">
-              <div style="color:rgb(255, 255, 0); text-align:center; margin-top:-40px; padding:10px; width:100%; background:rgb(255, 102, 0); font-weight:bold ;">TOWELS</div>
+              <div class="car-title" style="color:rgb(255, 255, 0); text-align:center; margin-top:-40px; padding:10px; width:100%; background:rgb(255, 102, 0); font-weight:bold ;">TOWELS</div>
             </div>
 
             <div class="hideRight">
               <img src="img/gift/travel-mug/TM760.jpg">
-              <div style="color:rgb(255, 255, 0); text-align:center; margin-top:-40px; padding:10px; width:100%; background:rgb(255, 102, 0); font-weight:bold ;">TRAVEL MUGS</div>
+              <div class="car-title" style="color:rgb(255, 255, 0); text-align:center; margin-top:-40px; padding:10px; width:100%; background:rgb(255, 102, 0); font-weight:bold ;">TRAVEL MUGS</div>
             </div>
 
             <div class="hideRight">
               <img src="img/gift/t-shirt/TS801.jpg">
-              <div style="color:rgb(255, 255, 0); text-align:center; margin-top:-40px; padding:10px; width:100%; background:rgb(255, 102, 0); font-weight:bold ;">T-SHIRTS</div>
+              <div class="car-title" style="color:rgb(255, 255, 0); text-align:center; margin-top:-40px; padding:10px; width:100%; background:rgb(255, 102, 0); font-weight:bold ;">T-SHIRTS</div>
             </div>
 
             <div class="hideRight">
               <img src="img/gift/usb-pens/PN642.jpg">
-              <div style="color:rgb(255, 255, 0); text-align:center; margin-top:-40px; padding:10px; width:100%; background:rgb(255, 102, 0); font-weight:bold ;">USB PENS</div>
+              <div class="car-title" style="color:rgb(255, 255, 0); text-align:center; margin-top:-40px; padding:10px; width:100%; background:rgb(255, 102, 0); font-weight:bold ;">USB PENS</div>
             </div>
 
             <div class="hideRight">
               <img src="img/gift/water-bottle/WB901.jpg">
-              <div style="color:rgb(255, 255, 0); text-align:center; margin-top:-40px; padding:10px; width:100%; background:rgb(255, 102, 0); font-weight:bold ;">WATER BOTTLE</div>
+              <div class="car-title" style="color:rgb(255, 255, 0); text-align:center; margin-top:-40px; padding:10px; width:100%; background:rgb(255, 102, 0); font-weight:bold ;">WATER BOTTLE</div>
             </div>
 
             <div class="hideRight" id="last">
               <img src="img/packaging/PK112.jpg">
-              <div style="color:rgb(255, 255, 0); text-align:center; margin-top:-40px; padding:10px; width:100%; background:rgb(255, 102, 0); font-weight:bold ;">PACKAGING</div>
+              <div class="car-title" style="color:rgb(255, 255, 0); text-align:center; margin-top:-40px; padding:10px; width:100%; background:rgb(255, 102, 0); font-weight:bold ;">PACKAGING</div>
             </div>
 
           </div>
@@ -306,6 +309,56 @@ unset($_SESSION['modal']) ;
     </footer>
   </div>
 
+  <!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+<div class="modal-dialog">
+  <!-- Modal content-->
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title text-center">Success!</h4>
+    </div>
+    <div class="modal-body">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 mx-center text-center">
+            <p class="mb-5">Thank You! We will get back to you in 24 hours.</p>
+          </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+
+<!-- Modal -->
+<div id="myModal2" class="modal fade" role="dialog">
+<div class="modal-dialog">
+<!-- Modal content-->
+<div class="modal-content">
+  <div class="modal-header">
+    <h4 class="modal-title text-center">Try Again!</h4>
+  </div>
+  <div class="modal-body">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 mx-center text-center">
+          <p class="mb-5">Request Not Sent! Try Again.</p>
+        </div>
+      </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -319,17 +372,26 @@ unset($_SESSION['modal']) ;
     <script src="js/creative.min.js"></script>
     <script src="js/animate.js"></script>
     <script type="text/javascript">
-    var start ;
-    document.getElementById("mainNav").style.display = "none" ;
-    function load(){
-      start=setTimeout(showpage,4500) ;
-    }
-
-    function showpage(){
-      document.getElementById("loader").style.display = "none" ;
-      document.getElementById("mainNav").style.display = "block" ;
-      document.getElementById("content").style.display = "block" ;
+    // var start ;
+    // document.getElementById("mainNav").style.display = "none" ;
+    // function load(){
+    //   start=setTimeout(showpage,4500) ;
+    // }
+    //
+    // function showpage(){
+    //   document.getElementById("loader").style.display = "none" ;
+    //   document.getElementById("mainNav").style.display = "block" ;
+    //   document.getElementById("content").style.display = "block" ;
     }
     </script>
+
+    <?php if($show_modal == 1):?>
+      <script> $('#myModal').modal('show');</script>
+    <?php endif;?>
+
+    <?php if($show_modal == -1):?>
+      <script> $('#myModal2').modal('show');</script>
+    <?php endif;?>
+
   </body>
 </html>

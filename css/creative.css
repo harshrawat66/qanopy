@@ -96,11 +96,6 @@ img::-moz-selection {
   background: transparent;
 }
 
-@keyframes slide-in {
-  from{height: 0;}
-  to{height: 60px;}
-}
-
 #mainNav {
   border-bottom: 1px solid rgba(33, 37, 41, 0.1);
   background-color:  rgb(255, 102, 0);
@@ -109,12 +104,6 @@ img::-moz-selection {
   -moz-transition: all 0.2s;
   transition: all 0.2s;
   width: auto ;
-  animation: slide-in 0.5s linear ;
-}
-
-@keyframes opa {
-  from{opacity: 0;}
-  to{opacity:1;}
 }
 
 #mainNav .navbar-brand {
@@ -123,7 +112,6 @@ img::-moz-selection {
   color: #fff;
   font-family: 'Philosopher', sans-serif;
   width: 10% ;
-  animation: opa 1s linear ;
 }
 
 #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
@@ -216,7 +204,6 @@ header.masthead {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  width:0 ;
 }
 
 div.masthead-dst > img {
@@ -384,15 +371,11 @@ header.masthead p {
  padding: 1rem ;
 }
 
-#about, #contact, #footer, section{
-  width: 0;
-}
-
 #mastt{
   margin-top: 57px ;
 }
 
-#loader{
+/* #loader{
   width:100% ;
   height:600px ;
   margin: 0 auto ;
@@ -407,7 +390,7 @@ header.masthead p {
 #content{
   display: none ;
   text-align: center;
-}
+} */
 
 .animate-bottom{
   position: relative;
@@ -575,3 +558,9 @@ header.masthead p {
       padding: 15px;
       text-align: center;
   }
+
+#msgdiv{
+  color:rgb(255, 255, 0);
+  text-align:center;
+  width:100%;
+}

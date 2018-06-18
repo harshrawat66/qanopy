@@ -1,30 +1,5 @@
 $(document).ready(function() {
-
-  $("#loader").ready(function() {
-          $("#loader").fadeOut(2000) ;
-          $("#loader").fadeIn(2000) ;
-          $("#loader").fadeOut(500) ;
-
-
-  $("#mainNav").ready(function(){
-          $(".masthead").animate({width: "100%"}, 500, 'linear');
-          $("#carouselgallery").fadeIn(2500, 'swing') ;
-          $("#footer").animate({width: "100%"}, 500, 'linear');
-          //$("#mastt").animate({width: "100%"}, 500, 'linear');
-          $("section").animate({width: "100%"}, 500, 'linear');
-      });
-    }) ;
-
-
-    // $("#first").click(function() {
-    //   $(this).css('display', 'none');
-    // }) ;
-    //
-    //
-    // $("#second").click(function() {
-    //   $("#first").css('display', 'inline-block');
-    // }) ;
-
+    $(" .car-title").off('click');
 });
 
 function chklast(){
