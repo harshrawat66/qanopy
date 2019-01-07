@@ -1,2 +1,2 @@
 # Qanopy
-Website of Qanopy Impex pvt. ltd.
+Website of Qanopy Impex Pvt. Ltd.
